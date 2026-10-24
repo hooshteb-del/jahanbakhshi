@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <title>پروفایل پزشک | هوش‌طب</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="apple-touch-icon.png"
+  >
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: Tahoma, Arial, sans-serif;
+      text-align: center;
+      line-height: 2;
+      background: #f1f6f5;
+      color: #173b43;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: #087f82;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <p>در حال انتقال به پروفایل پزشک…</p>
+
+  <a
+    id="profileLink"
+    href="https://script.google.com/macros/s/AKfycbza3Ar18kI70fT72MHDwv6RYNkygWRiZ8e8fDXu2J6BFrUYVbHmHnifYQ-2EURx-a1B/exec?page=profile&amp;DoctorID=110"
+  >
+    بازکردن پروفایل پزشک
+  </a>
+
+  <script>
+    const destination =
+      document.getElementById('profileLink').href;
+
+    window.location.replace(destination);
+  </script>
+</body>
+</html>

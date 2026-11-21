@@ -1,0 +1,83 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+    <!-- Persian Datepicker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css" />
+    <!-- 1. jQuery (ابتدا) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 2. Persian Date (دوم) -->
+    <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.min.js"></script>
+    <!-- 3. Persian Datepicker (سوم) -->
+    <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="./static/css/shared.css">
+  <script defer src="./static/js/config.js"></script>
+  <script defer src="./static/js/shared.js"></script>
+
+
+  <script defer src="./static/js/doctor.js"></script>
+</head><body>
+<header><h1>هوش‌طب · پنل پزشک</h1><button class="secondary" onclick="logout()">خروج</button></header>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+<main>
+<section class="card login" id="login">
+  <h2>ورود پزشک</h2>
+
+  <p>با شماره نظام پزشکی و کلمه عبور وارد شوید.</p>
+
+  <label for="doctorNationalId">شماره نظام پزشکی</label>
+  <input
+    id="doctorNationalId"
+    autocomplete="username"
+  >
+
+  <label for="password">کلمه عبور</label>
+  <input
+    id="password"
+    type="password"
+    autocomplete="current-password"
+  >
+
+  <button onclick="loginDoctor()">ورود</button>
+</section>
+
+<div class="workspace" id="app" hidden><aside class="card patients"><h2>بیماران</h2><label>نام یا کد ملی<input id="query" maxlength="120" placeholder="جست‌وجوی بیمار"></label><button onclick="work(search)">جست‌وجو / بازخوانی</button><div id="patients"></div></aside><section class="timeline"><h2 id="patientTitle">بیمار را انتخاب کنید</h2><div id="timeline"></div></section>
+<section class="card editor"><h2>نتیجه ویزیت</h2><p id="selection" class="notice">از تاریخچه، جلسه مورد نظر را انتخاب کنید.</p>
+
+<form id="visitForm" hidden onsubmit="event.preventDefault()"><label>تشخیص پزشک<textarea id="Diagnosis" maxlength="6000"></textarea></label><label>شرح نتیجه ویزیت<textarea id="VisitResult" maxlength="6000"></textarea></label><h3>داروها</h3><div id="medications"></div><button type="button" class="secondary" onclick="addMedication()">افزودن دارو</button><label>توصیه‌های پزشکی<textarea id="MedicalRecommendations" maxlength="6000"></textarea></label>
+
+<label for="FollowUpDate">تاریخ پیگیری (شمسی)</label>
+<input
+  id="FollowUpDate"
+  type="text"
+  maxlength="10"
+  placeholder="1405/07/27"
+  autocomplete="off"
+  dir="ltr"
+>
+
+<label>یادداشت تکمیلی<textarea id="DoctorNotes" maxlength="6000"></textarea></label>
+
+<div class="row">
+  <button
+    id="finalVisitButton"
+    type="button"
+    onclick="preview()"
+  >
+    ثبت نهایی ویزیت
+  </button>
+
+  <button
+    type="button"
+    class="secondary"
+    onclick="cancelEdit()"
+  >
+    لغو
+  </button>
+</div>
+</form></section></div></main>
+<dialog id="confirmDialog"><h2>تأیید نتیجه ویزیت</h2><p>لطفاً اطلاعات را بررسی کنید. ویزیت نهایی قابل ویرایش نیست.</p><div id="preview"></div><div class="row"><button onclick="finalize()">تأیید و ثبت نهایی</button><button class="secondary" onclick="byId('confirmDialog').close()">بازگشت</button></div></dialog>
+
+</body></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پروفایل پزشک | هوش‌طب</title>
+
+  <!-- فونت وزیرمتن -->
+  <!--
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  -->
+  <link rel="stylesheet" href="https://hooshteb.ir/linkfiles/Vazirmatn-font-face.css">
+  
+  <link rel="stylesheet" href="./static/css/doctor_profile.css">
+</head>
+<body>
+  <main class="profile-card">
+    <!-- هدر -->
+    <header class="profile-header">
+      <div class="avatar-wrap">
+        <img
+          class="avatar"
+          src="" id="doctorPhoto"
+          alt="پروفایل پزشک"
+        >
+      </div>
+
+      <div class="profile-heading">
+        <h1 class="profile-name" data-doctor-field="fullname"></h1>
+      </div>
+      <div class="profile-specialty-wrap">
+        
+          <span class="profile-specialty" data-doctor-field="specialty"></span>
+        
+      </div>
+    </header>
+
+    <!-- بدنه -->
+    <section class="profile-body">
+
+      <!-- ===== بخش خدمات (بالا) ===== -->
+      <section class="svc-section">
+        <div class="svc-grid">
+
+          <!-- خدمت ۱: داخل مطب -->
+          <div class="svc-card">
+
+            <div class="svc-card-top">
+              <div class="svc-card-info">
+                <h3 class="svc-card-title">خدمات هوشمند داخل مطب</h3>
+                <p class="svc-card-desc">
+                  قبل از ورود به اتاق پزشک شرح حال خود را کامل ثبت کنید
+                </p>
+              </div>
+
+              <a class="svc-btn svc-btn-doctor svc-btn-small"
+                href="./doctor_panel.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                داشبورد ویزیت پزشک
+              </a>
+            </div>
+
+            <a class="svc-btn svc-btn-patient svc-btn-large"
+              id="patientPageLink" href="./patient_chat.html"
+              target="_blank"
+              rel="noopener noreferrer">
+              درج شرح حال در مطب
+            </a>
+
+          </div>
+
+
+          <!-- خدمت ۲: مشاوره -->
+          <div class="svc-card">
+
+            <div class="svc-card-top">
+              <div class="svc-card-info">
+                <h3 class="svc-card-title">خدمات مشاوره هوشمند</h3>
+                <p class="svc-card-desc">
+                  مشاوره آنلاین، پاسخ به سوالات و پیگیری درمان
+                </p>
+              </div>
+
+              <a class="svc-btn svc-btn-doctor svc-btn-small"
+                href="./doctor_panel.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                داشبورد مشاوره پزشک
+              </a>
+            </div>
+
+            <a class="svc-btn svc-btn-patient svc-btn-large"
+              href="./patient_chat.html"
+              target="_blank"
+              rel="noopener noreferrer">
+              ثبت شرح حال‌های روزانه
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+      <!-- ===== پایان بخش خدمات ===== -->
+
+      <!-- ===== اطلاعات پزشک (پایین) ===== -->
+      <div class="section-label">اطلاعات پزشک</div>
+
+      <div class="info-grid">
+        <!-- تلفن همراه -->
+        
+          <div class="info-item">
+            <div class="info-icon">📱</div>
+            <div class="info-text">
+              <div class="info-label">تلفن همراه</div>
+              <div class="info-value">
+                <a data-doctor-link="phonenumber" href="#" data-doctor-field="phonenumber"></a>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- تلفن مطب -->
+        
+          <div class="info-item">
+            <div class="info-icon">☎️</div>
+            <div class="info-text">
+              <div class="info-label">تلفن مطب</div>
+              <div class="info-value">
+                <a data-doctor-link="officephone" href="#" data-doctor-field="officephone"></a>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- ایمیل -->
+        
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <div class="info-label">ایمیل</div>
+              <div class="info-value">
+                <a data-doctor-link="email" href="#" data-doctor-field="email"></a>
+              </div>
+            </div>
+          </div>
+        
+
+        <!-- شناسه پزشک -->
+        
+          <div class="info-item">
+            <div class="info-icon">🆔</div>
+            <div class="info-text">
+              <div class="info-label">شناسه پزشک</div>
+              <div class="info-value" data-doctor-field="pezeshk_id"></div>
+            </div>
+          </div>
+        
+      </div>
+
+      <!-- توضیحات کلینیک -->
+      
+        <div class="clinic-desc">
+          <div class="info-label">درباره مطب / خدمات</div>
+          <p data-doctor-field="clinic_desc"></p>
+        </div>
+      
+
+      <!-- آدرس -->
+      
+        <div class="address-box">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <div class="info-label">آدرس مطب</div>
+            <div class="info-value" data-doctor-field="address"></div>
+          </div>
+        </div>
+      
+      <!-- ===== پایان اطلاعات پزشک ===== -->
+
+    </section>
+
+    <!-- فوتر -->
+    <footer class="profile-footer">
+      سامانه <strong>هوش‌طب</strong> — پروفایل اختصاصی پزشک
+    </footer>
+  </main>
+  
+  <script defer src="./static/js/config.js"></script>
+  <script defer src="./static/js/doctor_profile.js"></script>
+</body>
+</html>
